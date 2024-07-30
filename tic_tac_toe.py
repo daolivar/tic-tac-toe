@@ -43,6 +43,10 @@ class TicTacToe:
                 print("Invalid input. Please enter a number between 1 and 9.")
         return pos
 
-    def is_valid_position(self, pos):
+    def is_valid_position(self, position):
         # Check if the input is a digit and is between 1 and 9
-        return pos.isdigit() and 1 <= int(pos) <= 9
+        return position.isdigit() and 1 <= int(position) <= 9
+
+    def update_board(self, position):
+        # Update the board with the current player's symbol at the given position.
+        self.board[int(position)-1] = self.current_player
