@@ -8,8 +8,12 @@ def main():
     print("Tic Tac Toe!")
     while True:
         game.display_board()
+        print(f"Current Player {game.current_player}")
+        pos = game.get_valid_position()
+        print(f'Position choice: {pos}')
+        game.switch_player()
+        print(f"Current Player {game.current_player}")
         break
-
     option = input("Continue playing? (Y/N) ")
     if option == "Y" or option == "y":
         main()
