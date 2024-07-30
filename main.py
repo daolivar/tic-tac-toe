@@ -10,9 +10,7 @@ def main():
         game.display_board()
         print(f"Current Player {game.current_player}")
         pos = game.get_valid_position()
-        print(f'Position choice: {pos}')
         game.update_board(pos)
-
         game.switch_player()
         print(f"Next Player {game.current_player}")
         break

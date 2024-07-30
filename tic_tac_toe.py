@@ -27,13 +27,13 @@ class TicTacToe:
         # Prompt the current player to enter a valid position on the board
         # Continue prompting until a valid position is provided
         valid = False
-        pos = None
+        position = None
         while not valid:
             # Get user input for the position
-            pos = input("Enter a position from 1 to 9: ")
+            position = input("Enter a position from 1 to 9: ")
             # Check if the input is a valid position
-            if self.is_valid_position(pos):
-                index = int(pos) - 1  # Convert to 0-based index
+            if self.is_valid_position(position):
+                index = int(position) - 1  # Convert to 0-based index
                 # Check if the board position is empty
                 if self.board[index] == ' ':
                     valid = True
@@ -41,7 +41,7 @@ class TicTacToe:
                     print("Invalid move. The position is already taken. Try again.")
             else:
                 print("Invalid input. Please enter a number between 1 and 9.")
-        return pos
+        return position
 
     def is_valid_position(self, position):
         # Check if the input is a digit and is between 1 and 9
