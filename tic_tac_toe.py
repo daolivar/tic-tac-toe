@@ -50,3 +50,31 @@ class TicTacToe:
     def update_board(self, position):
         # Update the board with the current player's symbol at the given position.
         self.board[int(position)-1] = self.current_player
+
+    def check_win(self):
+        # Check rows, diagonals, and columns for a winning combination
+        return self.check_rows() or self.check_diagonals() or self.check_columns()
+
+    def check_rows(self):
+        # Check all three rows
+        return (
+            self.current_player == self.board[0] == self.board[1] == self.board[2] or
+            self.current_player == self.board[3] == self.board[4] == self.board[5] or
+            self.current_player == self.board[6] == self.board[7] == self.board[8]
+        )
+
+    def check_diagonals(self):
+        # Check both diagonals
+        return (
+            self.current_player == self.board[0] == self.board[4] == self.board[8] or
+            self.current_player == self.board[2] == self.board[4] == self.board[6]
+        )
+
+    def check_columns(self):
+        # Check all three columns
+        return (
+            self.current_player == self.board[0] == self.board[3] == self.board[6] or
+            self.current_player == self.board[1] == self.board[4] == self.board[7] or
+            self.current_player == self.board[2] == self.board[5] == self.board[8]
+        )
+
