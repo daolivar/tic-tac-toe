@@ -2,29 +2,33 @@ from tic_tac_toe import TicTacToe
 
 def main():
     game = TicTacToe()
-    game.board = [' '] * 9
-    game.current_player = game.player1_symbol
+    reset = True
 
     print("Tic Tac Toe!")
     while True:
+        if reset:
+            game.reset_game()  # Reset the game state
+            reset = False
+
         game.display_board()
         print(f"Current Player {game.current_player}")
         pos = game.get_valid_position()
         game.update_board(pos)
+
         if game.check_win():
             print(f"Winner, Player {game.current_player}")
-            break
-        if game.check_draw():
+            reset = True
+        elif game.check_draw():
             print(f"Draw, no winner!")
-            break
-        game.switch_player()
+            reset = True
+        else:
+            game.switch_player()
 
-    option = input("Continue playing? (Y/N) ")
-    if option == "Y" or option == "y":
-        main()
-    else:
-        print("Thanks for playing!")
-        exit()
+        if reset:
+            option = input("Continue playing? (Y/N) ")
+            if option.lower() != 'y':
+                print("Thanks for playing!")
+                break
 
 if __name__ == "__main__":
     main()
