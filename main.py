@@ -14,6 +14,9 @@ def main():
         if game.check_win():
             print(f"Winner, Player {game.current_player}")
             break
+        if game.check_draw():
+            print(f"Draw, no winner!")
+            break
         game.switch_player()
 
     option = input("Continue playing? (Y/N) ")

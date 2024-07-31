@@ -51,6 +51,13 @@ class TicTacToe:
         # Update the board with the current player's symbol at the given position.
         self.board[int(position)-1] = self.current_player
 
+    def check_draw(self):
+        for elem in self.board:
+            # If there is at least one empty space, the game is not a draw
+            if elem == ' ':
+                return False
+        return True
+
     def check_win(self):
         # Check rows, diagonals, and columns for a winning combination
         return self.check_rows() or self.check_diagonals() or self.check_columns()
