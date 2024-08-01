@@ -4,7 +4,6 @@ def main():
     game = TicTacToe()
     reset = True
 
-    print("Tic Tac Toe!")
     while True:
         if reset:
             game.reset_game()  # Reset the game state

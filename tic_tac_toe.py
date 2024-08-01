@@ -11,10 +11,13 @@ class TicTacToe:
 
     def display_board(self):
         # Display the current state of the board
-        print('- - - - - - -')
+        print("Tic Tac Toe\n")
         for i in range(0, len(self.board), 3):
-            print(f'| {self.board[i]} | {self.board[i+1]} | {self.board[i+2]} |')
-            print('- - - - - - -')
+            if i == 6:
+                print(f' {self.board[i]} | {self.board[i+1]} | {self.board[i+2]} \n')
+            else:
+                print(f' {self.board[i]} | {self.board[i+1]} | {self.board[i+2]} ')
+                print(' ––––––––– ')
 
     def switch_player(self):
         # Switch to the other player
