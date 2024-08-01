@@ -7,6 +7,7 @@ def main():
     while True:
         if reset:
             game.reset_game()  # Reset the game state
+            game.display_instructions()
             reset = False
 
         game.display_board()

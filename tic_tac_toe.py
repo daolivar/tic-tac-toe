@@ -9,6 +9,31 @@ class TicTacToe:
         # Set the current player to player 1 initially
         self.current_player = self.player1_symbol
 
+    def display_instructions(self):
+        # Initialize user_input with a non-empty string to enter the while loop
+        user_input = " "
+
+        # Loop until the user presses Enter without typing anything
+        while user_input != "":
+            # Display the instructions for the game
+            print("Welcome to Tic Tac Toe!")
+            print("Player 1 is X and Player 2 is O")
+            print("To make a move, enter a number between 1 and 9 corresponding to the board position:\n")
+            
+            # Display the board positions corresponding to the numbers 1 to 9
+            print('1 | 2 | 3')
+            print('---------')
+            print('4 | 5 | 6')
+            print('---------')
+            print('7 | 8 | 9\n')
+            
+            # Prompt the user to press Enter to continue
+            user_input = input("Press Enter to continue: ")
+
+        # Print 5 new lines to clear the screen after the instructions
+        for _ in range(5):
+            print("\n")
+
     def display_board(self):
         # Display the current state of the board
         print("Tic Tac Toe\n")
