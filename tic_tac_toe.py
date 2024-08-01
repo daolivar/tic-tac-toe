@@ -86,5 +86,6 @@ class TicTacToe:
         )
 
     def reset_game(self):
+        # Reset the game board and set the current player to player 1
         self.board = [' '] * 9
         self.current_player = self.player1_symbol

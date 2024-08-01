@@ -16,10 +16,12 @@ def main():
         game.update_board(pos)
 
         if game.check_win():
+            game.display_board()
             print(f"Winner, Player {game.current_player}")
             reset = True
         elif game.check_draw():
-            print(f"Draw, no winner!")
+            game.display_board()
+            print("Draw, no winner!")
             reset = True
         else:
             game.switch_player()
@@ -29,6 +31,7 @@ def main():
             if option.lower() != 'y':
                 print("Thanks for playing!")
                 break
+
 
 if __name__ == "__main__":
     main()
